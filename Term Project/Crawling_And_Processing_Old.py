@@ -4,6 +4,12 @@ import csv
 
 # Crawling Start
 
+#2000
+data_file_2000 = pd.read_html('http://bigmacindex.org/2000-big-mac-index.html', flavor='html5lib')
+data_file=data_file_2000[0]
+
+data_file.to_csv("2000.csv", mode='w', header=False)
+
 #2001
 data_file_2001 = pd.read_html('http://bigmacindex.org/2001-big-mac-index.html', flavor='html5lib')
 data_file=data_file_2001[0]
@@ -64,10 +70,63 @@ data_file=data_file_2010[0]
 
 data_file.to_csv("2010.csv", mode='w', header=False)
 
+#2011
+data_file_2011 = pd.read_html('http://bigmacindex.org/2011-big-mac-index.html', flavor='html5lib')
+data_file=data_file_2011[0]
+
+data_file.to_csv("2011.csv", mode='w', header=False)
+
+#2012
+data_file_2012 = pd.read_html('http://bigmacindex.org/2012-big-mac-index.html', flavor='html5lib')
+data_file=data_file_2012[0]
+
+data_file.to_csv("2012.csv", mode='w', header=False)
+
+#2013
+data_file_2013 = pd.read_html('http://bigmacindex.org/2013-big-mac-index.html', flavor='html5lib')
+data_file=data_file_2013[0]
+
+data_file.to_csv("2013.csv", mode='w', header=False)
+
+#2014
+data_file_2014 = pd.read_html('http://bigmacindex.org/2014-big-mac-index.html', flavor='html5lib')
+data_file=data_file_2014[0]
+
+data_file.to_csv("2014.csv", mode='w', header=False)
+
+#2015
+data_file_2015 = pd.read_html('http://bigmacindex.org/2015-big-mac-index.html', flavor='html5lib')
+data_file=data_file_2015[0]
+
+data_file.to_csv("2015.csv", mode='w', header=False)
+
 # Crawling End
 
 # Processing Start
-wanted_country=["Britain", "South Korea", "Canada", "Japan", "Australia", "Argentina", "Brazil", "Russia", "China", "Indonesia", "United States"]
+wanted_country = ['Australia', 'Brazil', 'Canada', 'Chile', 'Czech Republic', 'Hungary', 'Japan', 'South Korea', 'Mexico', 'New Zealand', 'Russia', 'Poland', 'Britain', 'United States']
+
+#2000
+fileMatrix = []
+fileMatrix_2=[]
+
+with open("2000.csv", 'r') as fileRead:
+
+    csvFirst = csv.reader(fileRead)
+
+    for lineContent in csvFirst:
+        fileMatrix.append(lineContent)
+
+    for i in range(len(fileMatrix)):
+        fileMatrix[i]=fileMatrix[i][1:4]
+        if fileMatrix[i][0] in wanted_country:
+            fileMatrix_2.append(fileMatrix[i])
+
+with open("2000_P.csv", 'w', newline='') as fileWrite:
+
+    csvSecond=csv.writer(fileWrite)
+
+    for i in range(len(fileMatrix_2)):
+        csvSecond.writerow(fileMatrix_2[i])
 
 #2001
 fileMatrix = []
@@ -293,6 +352,121 @@ with open("2010.csv", 'r') as fileRead:
             fileMatrix_2.append(fileMatrix[i])
 
 with open("2010_P.csv", 'w', newline='') as fileWrite:
+
+    csvSecond=csv.writer(fileWrite)
+
+    for i in range(len(fileMatrix_2)):
+        csvSecond.writerow(fileMatrix_2[i])
+
+#2011
+fileMatrix = []
+fileMatrix_2=[]
+
+with open("2011.csv", 'r') as fileRead:
+
+    csvFirst = csv.reader(fileRead)
+
+    for lineContent in csvFirst:
+        fileMatrix.append(lineContent)
+
+    for i in range(len(fileMatrix)):
+        fileMatrix[i]=fileMatrix[i][1:4]
+        if fileMatrix[i][0] in wanted_country:
+            fileMatrix_2.append(fileMatrix[i])
+
+with open("2011_P.csv", 'w', newline='') as fileWrite:
+
+    csvSecond=csv.writer(fileWrite)
+
+    for i in range(len(fileMatrix_2)):
+        csvSecond.writerow(fileMatrix_2[i])
+
+#2012
+fileMatrix = []
+fileMatrix_2=[]
+
+with open("2012.csv", 'r') as fileRead:
+
+    csvFirst = csv.reader(fileRead)
+
+    for lineContent in csvFirst:
+        fileMatrix.append(lineContent)
+
+    for i in range(len(fileMatrix)):
+        fileMatrix[i]=fileMatrix[i][1:4]
+        if fileMatrix[i][0] in wanted_country:
+            fileMatrix_2.append(fileMatrix[i])
+
+with open("2012_P.csv", 'w', newline='') as fileWrite:
+
+    csvSecond=csv.writer(fileWrite)
+
+    for i in range(len(fileMatrix_2)):
+        csvSecond.writerow(fileMatrix_2[i])
+
+#2013
+fileMatrix = []
+fileMatrix_2=[]
+
+with open("2013.csv", 'r') as fileRead:
+
+    csvFirst = csv.reader(fileRead)
+
+    for lineContent in csvFirst:
+        fileMatrix.append(lineContent)
+
+    for i in range(len(fileMatrix)):
+        fileMatrix[i]=fileMatrix[i][1:4]
+        if fileMatrix[i][0] in wanted_country:
+            fileMatrix_2.append(fileMatrix[i])
+
+with open("2013_P.csv", 'w', newline='') as fileWrite:
+
+    csvSecond=csv.writer(fileWrite)
+
+    for i in range(len(fileMatrix_2)):
+        csvSecond.writerow(fileMatrix_2[i])
+
+#2014
+fileMatrix = []
+fileMatrix_2=[]
+
+with open("2014.csv", 'r') as fileRead:
+
+    csvFirst = csv.reader(fileRead)
+
+    for lineContent in csvFirst:
+        fileMatrix.append(lineContent)
+
+    for i in range(len(fileMatrix)):
+        fileMatrix[i]=fileMatrix[i][1:4]
+        if fileMatrix[i][0] in wanted_country:
+            fileMatrix_2.append(fileMatrix[i])
+
+with open("2014_P.csv", 'w', newline='') as fileWrite:
+
+    csvSecond=csv.writer(fileWrite)
+
+    for i in range(len(fileMatrix_2)):
+        csvSecond.writerow(fileMatrix_2[i])
+
+#2015
+fileMatrix = []
+fileMatrix_2=[]
+
+with open("2015.csv", 'r') as fileRead:
+
+    csvFirst = csv.reader(fileRead)
+
+    for lineContent in csvFirst:
+        fileMatrix.append(lineContent)
+
+    for i in range(len(fileMatrix)):
+        fileMatrix[i]=fileMatrix[i][1:4]
+        if fileMatrix[i][0] in wanted_country:
+            fileMatrix_2.append(fileMatrix[i])
+
+with open("2015_P.csv", 'w', newline='') as fileWrite:
 
     csvSecond=csv.writer(fileWrite)
 

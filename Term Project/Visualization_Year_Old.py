@@ -14,7 +14,7 @@ y_rate=[]
 for i in range(len(fileMatrix[yearInput-2001])-1):
     y_rate.append(float(fileMatrix[yearInput-2001][i+1]))
 
-x_country=['ARG', 'AUS', 'BRA', 'BRI', 'CAN','CHI', 'IND', 'JAP', 'RUS', 'KOR']
+x_country=['AUS', 'BRA', 'UK', 'CAN', 'CHL', 'CZE', 'HUN', 'JPN', 'MEX', 'NZL', 'POL', 'RUS', 'KOR'c]
 
 N_of_groups = len(x_country)
 index = np.arange(N_of_groups)

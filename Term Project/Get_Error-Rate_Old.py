@@ -172,6 +172,86 @@ for i in range(lenfileMatrix-1):
 
 errorRate.append(errorRate_2010)
 
+#2011
+fileMatrix=[]; errorRate_2011=[2011]
+with open("2011_P.csv", 'r') as fileRead:
+    csvFile = csv.reader(fileRead)
+    for lineContent in csvFile:
+        fileMatrix.append(lineContent)
+
+lenfileMatrix=len(fileMatrix)
+price_in_USA=float(fileMatrix[-1][1])
+
+for i in range(lenfileMatrix-1):
+    ToDo=exchange(float(fileMatrix[i][1]), price_in_USA, float(fileMatrix[i][2]))
+    errorRate_2011.append(ToDo.errorRate())
+
+errorRate.append(errorRate_2011)
+
+#2012
+fileMatrix=[]; errorRate_2012=[2012]
+with open("2012_P.csv", 'r') as fileRead:
+    csvFile = csv.reader(fileRead)
+    for lineContent in csvFile:
+        fileMatrix.append(lineContent)
+
+lenfileMatrix=len(fileMatrix)
+price_in_USA=float(fileMatrix[-1][1])
+
+for i in range(lenfileMatrix-1):
+    ToDo=exchange(float(fileMatrix[i][1]), price_in_USA, float(fileMatrix[i][2]))
+    errorRate_2012.append(ToDo.errorRate())
+
+errorRate.append(errorRate_2012)
+
+#2013
+fileMatrix=[]; errorRate_2013=[2013]
+with open("2013_P.csv", 'r') as fileRead:
+    csvFile = csv.reader(fileRead)
+    for lineContent in csvFile:
+        fileMatrix.append(lineContent)
+
+lenfileMatrix=len(fileMatrix)
+price_in_USA=float(fileMatrix[-1][1])
+
+for i in range(lenfileMatrix-1):
+    ToDo=exchange(float(fileMatrix[i][1]), price_in_USA, float(fileMatrix[i][2]))
+    errorRate_2013.append(ToDo.errorRate())
+
+errorRate.append(errorRate_2013)
+
+#2014
+fileMatrix=[]; errorRate_2014=[2014]
+with open("2014_P.csv", 'r') as fileRead:
+    csvFile = csv.reader(fileRead)
+    for lineContent in csvFile:
+        fileMatrix.append(lineContent)
+
+lenfileMatrix=len(fileMatrix)
+price_in_USA=float(fileMatrix[-1][1])
+
+for i in range(lenfileMatrix-1):
+    ToDo=exchange(float(fileMatrix[i][1]), price_in_USA, float(fileMatrix[i][2]))
+    errorRate_2014.append(ToDo.errorRate())
+
+errorRate.append(errorRate_2014)
+
+#2015
+fileMatrix=[]; errorRate_2015=[2015]
+with open("2015_P.csv", 'r') as fileRead:
+    csvFile = csv.reader(fileRead)
+    for lineContent in csvFile:
+        fileMatrix.append(lineContent)
+
+lenfileMatrix=len(fileMatrix)
+price_in_USA=float(fileMatrix[-1][1])
+
+for i in range(lenfileMatrix-1):
+    ToDo=exchange(float(fileMatrix[i][1]), price_in_USA, float(fileMatrix[i][2]))
+    errorRate_2015.append(ToDo.errorRate())
+
+errorRate.append(errorRate_2015)
+
 #errorRate
 with open('Error Rate.csv', 'w', newline='') as fileWrite:
     csvWrite=csv.writer(fileWrite)
